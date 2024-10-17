@@ -148,7 +148,6 @@
             margin: 40px auto;  /* Center the section horizontally */
             border-radius: 15px;  /* Smoother rounded corners */
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for a more elegant look */
-            /* text-align: center; Center text inside the section */
         }
 
         .about-section h2 {
@@ -186,40 +185,47 @@
 
         /* Modal Styles */
         .modal {
-            display: none; /* Hidden by default */
+            display: none; /* Hide the modal by default */
             position: fixed; /* Stay in place */
             z-index: 1000; /* Sit on top */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
             height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+            background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+            justify-content: center; /* Center the modal content */
+            align-items: center; /* Center the modal content */
         }
 
         .modal-content {
-            background-color: #fff;
-            margin: 15% auto; /* 15% from the top and centered */
+            background-color: white;
             padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            max-width: 500px; /* Set a max width */
-            border-radius: 10px; /* Rounded corners */
+            border-radius: 10px;
+            max-width: 80%;
+            width: 550px; /* Fixed width for the modal */
+            height: auto; /* Auto height */
+            max-height: 90vh; /* Maximum height of the modal content */
+            overflow: auto; /* Add scroll if content exceeds max height */
         }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
+        .modal-content iframe {
+            border: none;
+            width: 100%;
+            height: 80vh; /* Set iframe height to a percentage of the viewport height */
         }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
+
+        .close-btn {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 5px 10px;
+            background-color: #f00;
+            color: white;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
+
     </style>
 </head>
 <body>
@@ -258,43 +264,41 @@
             <h2>A bit about me</h2>
             <p>
                 I'm Jack Zarifeh, from Christchurch, New Zealand, with a background in mechatronics engineering. My journey into AI began in an unusual place — developing facial recognition for sheep at an agritech startup! This gave me hands-on experience with AI's potential and sharpened my skills in machine learning, computer vision, and data analysis.<br><br>
-                Seeing how AI can transform businesses, I shifted my focus to automation, particularly voice AI. Today, I’m passionate about creating solutions that simplify complex processes, enhance customer interactions, and ultimately drive success for businesses.
+                Seeing how AI can transform businesses, I shifted my focus to automation, particularly voice AI. Today, I’m passionate about creating solutions that simplify complex processes, enhance customer interactions, and ultimately drive success.
             </p>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Jack Zarifeh. All Rights Reserved.</p>
+        <p>&copy; 2024 Jack Zarifeh Solutions. All rights reserved.</p>
     </footer>
 </div>
 
-<!-- Modal for Contact Form -->
-<div id="contactModal" class="modal">
+<!-- Modal for Airtable Form -->
+<div class="modal" id="contactModal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Contact Me</h2>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/paga9xw6oFqu83qOg/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <!-- <button class="close-btn" onclick="closeModal()">Close</button> -->
+        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/paga9xw6oFqu83qOg/form" frameborder="0" onmousewheel="" width="100%" height="670" style="background: transparent; border: 1px solid #ccc;"></iframe>
     </div>
 </div>
 
 <script>
     function openModal() {
-        document.getElementById("contactModal").style.display = "block";
+        document.getElementById('contactModal').style.display = 'flex'; // Show the modal
     }
 
     function closeModal() {
-        document.getElementById("contactModal").style.display = "none";
+        document.getElementById('contactModal').style.display = 'none'; // Hide the modal
     }
 
-    // Close the modal if the user clicks outside of it
+    // Close modal when clicking outside of it
     window.onclick = function(event) {
-        var modal = document.getElementById("contactModal");
-        if (event.target == modal) {
-            modal.style.display = "none";
+        const modal = document.getElementById('contactModal');
+        if (event.target === modal) {
+            closeModal(); // Hide the modal if clicking outside
         }
     }
 </script>
-
 </body>
 </html>
