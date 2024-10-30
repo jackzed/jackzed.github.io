@@ -83,7 +83,7 @@
 
         .highlighted-name {
             display: inline-block;
-            background-color: #00a4a2;
+            background-color: black;
             color: white;
             padding: 5px 10px;
             border-radius: 5px;
@@ -100,7 +100,7 @@
 
         .cta-btn {
             padding: 10px 20px;
-            background-color: #00a4a2;
+            background-color: black;
             color: white;
             border: none;
             border-radius: 5px;
@@ -130,7 +130,7 @@
             justify-content: center;
             align-items: center;
             position: relative; /* For positioning the image within */
-            border: 5px solid #00a4a2; /* Adds a border to the circular shape */
+            border: 5px solid black; /* Adds a border to the circular shape */
         }
 
         .circular-placeholder img {
@@ -249,7 +249,7 @@
                 <h2>
                     Integrating AI, especially voice AI, into your business can be daunting. Let me simplify the process, so you can focus on what you do best. I'll help you harness the power of cutting-edge voice AI technology to transform your operations and deliver an exceptional experience to your customers.
                 </h2>
-                <button class="cta-btn">Get Started</button>
+                <button class="cta-btn" onclick="openGetStartedModal()">Get Started</button>
             </div>
             
             <div class="hero-image">
@@ -283,6 +283,13 @@
     </div>
 </div>
 
+<div class="modal" id="getStartedModal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeGetStartedModal()">Close</button>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/pagaXBhNzOIFbGYLf/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
+</div>
+
 <script>
     function openModal() {
         document.getElementById('contactModal').style.display = 'flex'; // Show the modal
@@ -292,11 +299,23 @@
         document.getElementById('contactModal').style.display = 'none'; // Hide the modal
     }
 
-    // Close modal when clicking outside of it
+    function openGetStartedModal() {
+        document.getElementById('getStartedModal').style.display = 'flex'; // Show the "Get Started" modal
+    }
+
+    function closeGetStartedModal() {
+        document.getElementById('getStartedModal').style.display = 'none'; // Hide the "Get Started" modal
+    }
+
+    // Close modals when clicking outside of them
     window.onclick = function(event) {
-        const modal = document.getElementById('contactModal');
-        if (event.target === modal) {
-            closeModal(); // Hide the modal if clicking outside
+        const contactModal = document.getElementById('contactModal');
+        const getStartedModal = document.getElementById('getStartedModal');
+        if (event.target === contactModal) {
+            closeModal(); // Hide contact modal if clicking outside
+        }
+        if (event.target === getStartedModal) {
+            closeGetStartedModal(); // Hide "Get Started" modal if clicking outside
         }
     }
 </script>
