@@ -49,11 +49,10 @@
 
         .header-content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             width: 100%;
             max-width: 1000px;
-            gap: 15px; /* Adds consistent spacing between elements */
+            gap: 15px;
         }
 
         .logo {
@@ -247,21 +246,31 @@
         }
 
         .phone-icon {
-            display: none; /* Hidden by default */
+            display: none;
             margin-right: 10px;
-            margin-left: auto;
-            order: 2;
             text-decoration: none;
+            z-index: 1; /* Ensure it stays above other elements */
+        }
+
+        .contact-btn {
+            padding: 8px 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+            position: relative; /* Ensure button stays clickable */
+            z-index: 2; /* Higher than phone icon */
         }
 
         .contact-number {
-            margin-right: 0;
-            margin-left: auto;
+            margin-left: auto; /* This pushes it to the right */
             padding-right: 15px;
             font-size: 14px;
             white-space: nowrap;
         }
-
 
         .contact-number a {
             color: #333;
@@ -277,15 +286,14 @@
         @media (max-width: 768px) {
             .phone-icon {
                 display: block;
+                margin-left: auto; /* Push to right */
+                margin-right: 10px;
             }
             .contact-number {
                 display: none;
             }
-            /* Keep existing header content alignment */
-            .header-content {
-                justify-content: space-between;
-            }
         }
+
         /* Responsive Styles */
         @media (max-width: 900px) {
             .hero-section {
@@ -417,8 +425,8 @@
             <div class="contact-number">
                 <a href="tel:0220805712">022 080 5712</a>
             </div>
-            <a href="tel:0220805712" class="phone-icon" style="text-decoration: none">📞</a>
-            <button class="contact-btn">Get in touch</button>
+            <button class="contact-btn" onclick="openModal()">Get in touch</button>
+            <a href="tel:0220805712" class="phone-icon">📞</a>
         </div>
     </header>
 
