@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Automation Solutions - Jack Zarifeh</title>
+    <title>JZAP</title>
     <style>
         /* Ensure the page fills the whole viewport */
         html, body {
@@ -233,7 +233,7 @@
 <div class="wrapper">
     <!-- Header -->
     <header>
-        <div class="logo">Jack Zarifeh Solutions</div>
+        <div class="logo">JZAP - JZ Automation Processes</div>
         <button class="contact-btn" onclick="openModal()">Get in touch</button>
     </header>
 
@@ -254,7 +254,7 @@
             
             <div class="hero-image">
                 <div class="circular-placeholder">
-                    <img src="placeholder-headshot.png" alt="Headshot">
+                    <img src="headshot.jpg" alt="Headshot">
                 </div>
             </div>
         </div>
@@ -263,48 +263,56 @@
         <div class="about-section">
             <h2>A bit about me</h2>
             <p>
-                I'm Jack Zarifeh, from Christchurch, New Zealand, with a background in mechatronics engineering. My journey into AI began in an unusual place — developing facial recognition for sheep at an agritech startup! This gave me hands-on experience with AI's potential and sharpened my skills in machine learning, computer vision, and data analysis.<br><br>
-                Seeing how AI can transform businesses, I shifted my focus to automation, particularly voice AI. Today, I’m passionate about creating solutions that simplify complex processes, enhance customer interactions, and ultimately drive success.
+                I'm Jack Zarifeh, from Christchurch, New Zealand, with a background in mechatronics engineering (BE(hons)). My journey into AI began in an unusual place — developing facial recognition for sheep at an agritech startup! This gave me hands-on experience with AI's potential and sharpened my skills in machine learning, computer vision, and data analysis.<br><br>
+                Seeing how AI can transform businesses, I shifted my focus to automation, particularly voice AI. Today, I'm passionate about creating solutions that simplify complex processes, enhance customer interactions, and ultimately drive success.
             </p>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Jack Zarifeh Solutions. All rights reserved.</p>
+        <p>&copy; 2024 JZAP. All rights reserved.</p>
     </footer>
 </div>
 
 <!-- Modal for Airtable Form -->
 <div class="modal" id="contactModal">
     <div class="modal-content">
-        <!-- <button class="close-btn" onclick="closeModal()">Close</button> -->
-        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/paga9xw6oFqu83qOg/form" frameborder="0" onmousewheel="" width="100%" height="670" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/paga9xw6oFqu83qOg/form" frameborder="0" onmousewheel="" width="100%" height="670" style="background: transparent; border: 1px solid #ccc; display: none;"></iframe>
     </div>
 </div>
 
 <div class="modal" id="getStartedModal">
     <div class="modal-content">
         <button class="close-btn" onclick="closeGetStartedModal()">Close</button>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/pagaXBhNzOIFbGYLf/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/pagaXBhNzOIFbGYLf/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc; display: none;"></iframe>
     </div>
 </div>
 
 <script>
     function openModal() {
         document.getElementById('contactModal').style.display = 'flex'; // Show the modal
+        const iframe = document.querySelector('#contactModal iframe');
+        iframe.style.display = 'block'; // Show the iframe when modal opens
     }
 
     function closeModal() {
         document.getElementById('contactModal').style.display = 'none'; // Hide the modal
+        const iframe = document.querySelector('#contactModal iframe');
+        iframe.style.display = 'none'; // Hide the iframe when modal closes
     }
 
     function openGetStartedModal() {
         document.getElementById('getStartedModal').style.display = 'flex'; // Show the "Get Started" modal
+        const iframe = document.querySelector('#getStartedModal iframe');
+        iframe.style.display = 'block'; // Show the iframe when modal opens
     }
 
     function closeGetStartedModal() {
         document.getElementById('getStartedModal').style.display = 'none'; // Hide the "Get Started" modal
+        const iframe = document.querySelector('#getStartedModal iframe');
+        iframe.style.display = 'none'; // Hide the iframe when modal closes
     }
 
     // Close modals when clicking outside of them
