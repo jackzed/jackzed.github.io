@@ -33,44 +33,61 @@
 
         header {
             position: fixed;
-            top: 20px;
+            top: 0;
             left: 0;
             right: 0;
-            padding: 10px 20px;
+            padding: 15px 20px;
             background-color: white;
-            border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            max-width: 1000px; /* Adjusted width */
-            margin: 0 auto; /* Centers the header horizontally */
+            width: 100%;
             display: flex;
-            justify-content: space-between; /* Space between logo and button */
-            align-items: center; /* Vertically centers the logo and button */
+            justify-content: center; /* Center the content container */
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            gap: 15px; /* Adds consistent spacing between elements */
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             color: black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 70%;
         }
 
         .contact-btn {
-            padding: 10px 20px;
+            padding: 8px 16px;
             background-color: black;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+            order: 3; 
         }
 
         /* Hero Section Styles */
         .hero-section {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            max-width: 1000px; /* Reduced width to bring content closer */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
+            box-sizing: border-box;
         }
 
         .hero-content {
@@ -82,7 +99,7 @@
             font-weight: bold;
             color: black;
             margin-bottom: 10px;
-            line-height: 1.4; /* Ensures proper spacing between lines */
+            line-height: 1.4;
         }
 
         .highlighted-name {
@@ -97,9 +114,9 @@
         .hero-content h2 {
             font-size: 18px;
             color: gray;
-            line-height: 1.6; /* Adds comfortable spacing between lines */
-            margin-bottom: 20px; /* Adds spacing between subheadline and button */
-            max-width: 600px; /* Ensures the text doesn't stretch too far */
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 600px;
         }
 
         .cta-btn {
@@ -129,37 +146,37 @@
             height: 300px;
             background-color: lightgray;
             border-radius: 50%;
-            overflow: hidden; /* Ensures that the image is cropped within the circle */
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative; /* For positioning the image within */
-            border: 5px solid black; /* Adds a border to the circular shape */
+            position: relative;
+            border: 5px solid black;
         }
 
         .circular-placeholder img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire circular area */
-            border-radius: 50%; /* Makes the image itself circular */
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         /* About Section Styles */
         .about-section {
             background-color: #fff;
-            padding: 50px 30px; /* Increased padding for better spacing */
-            max-width: 1000px;  /* Set a max-width to center the section */
-            margin: 40px auto;  /* Center the section horizontally */
-            border-radius: 15px;  /* Smoother rounded corners */
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for a more elegant look */
+            padding: 50px 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         .about-section h2 {
-            font-size: 32px; /* Increased font size */
+            font-size: 32px;
             font-weight: bold;
             margin-bottom: 20px;
             color: #333;
-            text-align: center; /* Center the heading */
+            text-align: center;
         }
 
         .about-section p {
@@ -167,8 +184,8 @@
             line-height: 1.8;
             color: #555;
             margin-bottom: 20px;
-            max-width: 800px; /* Limit paragraph width for readability */
-            margin: 0 auto; /* Center the text block */
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Footer Styles */
@@ -180,7 +197,7 @@
             font-size: 14px;
             width: 100%;
             bottom: 0;
-            flex-shrink: 0; /* Prevents the footer from shrinking */
+            flex-shrink: 0;
         }
 
         footer p {
@@ -189,35 +206,34 @@
 
         /* Modal Styles */
         .modal {
-            display: none; /* Hide the modal by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
+            display: none;
+            position: fixed;
+            z-index: 1000;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
-            justify-content: center; /* Center the modal content */
-            align-items: center; /* Center the modal content */
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
         }
 
         .modal-content {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            max-width: 80%;
-            width: 550px; /* Fixed width for the modal */
-            height: auto; /* Auto height */
-            max-height: 90vh; /* Maximum height of the modal content */
-            overflow: auto; /* Add scroll if content exceeds max height */
+            max-width: 90%;
+            width: 550px;
+            height: auto;
+            max-height: 90vh;
+            overflow: auto;
         }
 
         .modal-content iframe {
             border: none;
             width: 100%;
-            height: 80vh; /* Set iframe height to a percentage of the viewport height */
+            height: 80vh;
         }
-
 
         .close-btn {
             display: inline-block;
@@ -230,15 +246,180 @@
             cursor: pointer;
         }
 
+        .phone-icon {
+            display: none; /* Hidden by default */
+            margin-right: 10px;
+            margin-left: auto;
+            order: 2;
+            text-decoration: none;
+        }
+
+        .contact-number {
+            margin-right: 0;
+            margin-left: auto;
+            padding-right: 15px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+
+        .contact-number a {
+            color: #333;
+            text-decoration: none; /* Start with no underline */
+            transition: color 0.2s;
+        }
+
+        .contact-number a:hover {
+            color: #007b7a;
+            text-decoration: underline; /* Underline on hover only */
+        }
+       
+        @media (max-width: 768px) {
+            .phone-icon {
+                display: block;
+            }
+            .contact-number {
+                display: none;
+            }
+            /* Keep existing header content alignment */
+            .header-content {
+                justify-content: space-between;
+            }
+        }
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .hero-content {
+                order: 1;
+                margin-bottom: 30px;
+            }
+            
+            .hero-image {
+                order: 2;
+            }
+            
+            .hero-content h1,
+            .hero-content h2 {
+                max-width: 100%;
+            }
+            
+            .highlighted-name {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 28px;
+            }
+            
+            .highlighted-name {
+                font-size: 28px;
+            }
+
+            .hero-content h2 {
+                font-size: 16px;
+            }
+
+            .cta-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .about-section {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+
+            .about-section h2 {
+                font-size: 24px;
+            }
+
+            .about-section p {
+                font-size: 16px;
+            }
+            
+            .circular-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 10px 15px;
+            }
+            
+            .logo {
+                font-size: 18px;
+                max-width: 60%;
+            }
+            
+            .contact-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+            
+            .highlighted-name {
+                font-size: 24px;
+                padding: 3px 8px;
+            }
+
+            .hero-content h2 {
+                font-size: 14px;
+            }
+
+            .cta-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .circular-placeholder {
+                width: 200px;
+                height: 200px;
+                border-width: 3px;
+            }
+            
+            .about-section {
+                padding: 20px 15px;
+                margin: 15px auto;
+                border-radius: 10px;
+            }
+            
+            .about-section h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .about-section p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <!-- Header -->
     <header>
-        <div class="logo">JZAP - JZ Automation Processes</div>
-        <button class="contact-btn" onclick="openModal()">Get in touch</button>
+        <div class="header-content">
+            <div class="logo">JZAP</div>
+            <div class="contact-number">
+                <a href="tel:0220805712">022 080 5712</a>
+            </div>
+            <a href="tel:0220805712" class="phone-icon" style="text-decoration: none">📞</a>
+            <button class="contact-btn">Get in touch</button>
+        </div>
     </header>
 
     <!-- Main Section -->
@@ -296,27 +477,27 @@
 
 <script>
     function openModal() {
-        document.getElementById('contactModal').style.display = 'flex'; // Show the modal
+        document.getElementById('contactModal').style.display = 'flex';
         const iframe = document.querySelector('#contactModal iframe');
-        iframe.style.display = 'block'; // Show the iframe when modal opens
+        iframe.style.display = 'block';
     }
 
     function closeModal() {
-        document.getElementById('contactModal').style.display = 'none'; // Hide the modal
+        document.getElementById('contactModal').style.display = 'none';
         const iframe = document.querySelector('#contactModal iframe');
-        iframe.style.display = 'none'; // Hide the iframe when modal closes
+        iframe.style.display = 'none';
     }
 
     function openGetStartedModal() {
-        document.getElementById('getStartedModal').style.display = 'flex'; // Show the "Get Started" modal
+        document.getElementById('getStartedModal').style.display = 'flex';
         const iframe = document.querySelector('#getStartedModal iframe');
-        iframe.style.display = 'block'; // Show the iframe when modal opens
+        iframe.style.display = 'block';
     }
 
     function closeGetStartedModal() {
-        document.getElementById('getStartedModal').style.display = 'none'; // Hide the "Get Started" modal
+        document.getElementById('getStartedModal').style.display = 'none';
         const iframe = document.querySelector('#getStartedModal iframe');
-        iframe.style.display = 'none'; // Hide the iframe when modal closes
+        iframe.style.display = 'none';
     }
 
     // Close modals when clicking outside of them
@@ -324,10 +505,10 @@
         const contactModal = document.getElementById('contactModal');
         const getStartedModal = document.getElementById('getStartedModal');
         if (event.target === contactModal) {
-            closeModal(); // Hide contact modal if clicking outside
+            closeModal();
         }
         if (event.target === getStartedModal) {
-            closeGetStartedModal(); // Hide "Get Started" modal if clicking outside
+            closeGetStartedModal();
         }
     }
 </script>
