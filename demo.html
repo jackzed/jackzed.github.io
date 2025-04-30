@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="JZAP — Demo of Voice AI solutions for New Zealand businesses.">
+    <meta name="keywords" content="voice AI demo NZ, JZAP demo, New Zealand AI demo, voice automation demo">
+    <meta name="author" content="Jack Zarifeh">
+    <title>JZAP | Voice AI Demo</title>
+    <script src="js/navbar.js" defer></script>
+
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="main-content">
+        <!-- Demo Information Section -->
+        <section class="demo-info content-section">
+            <h1>Experience Our Voice AI Demo</h1>
+            <p class="demo-description">
+                Call our demo line to interact with our AI agents. Each agent has different capabilities. 
+                After the greeting, simply say which demo you'd like to try:
+                <strong>"Assistant"</strong>, <strong>"Support"</strong>, <strong>"Real Estate"</strong>, 
+                <strong>"Takeaway"</strong>, or <strong>"Dentist"</strong>.
+            </p>
+            <div class="demo-number">
+                <a href="tel:036601206">NZ: 03 660 1206</a>
+            </div>
+            <p class="demo-description">
+                Available 24/7. Calls are free within New Zealand. Each call starts with the greeting menu.
+            </p>
+        </section>
+
+        <!-- Demo Agents Carousel -->
+        <div class="carousel-container">
+            <h2 class="carousel-title">Meet Our Demo Agents</h2>
+            <div class="carousel">
+                <!-- Personal Assistant -->
+                <div class="carousel-item">
+                    <div class="agent-card">
+                        <img src="images/clipboard-user-solid.svg" alt="Personal Assistant" class="agent-image">
+                        <h3 class="agent-name">Alex</h3>
+                        <p class="agent-role">Personal Assistant</p>
+                        <p class="agent-description">
+                            Try saying: <em>"Schedule a meeting for tomorrow"</em> or <em>"Remind me about the project deadline"</em>.
+                        </p>
+                        <div class="agent-features">
+                            <h4>Capabilities:</h4>
+                            <ul>
+                                <li>Calendar management</li>
+                                <li>Task reminders</li>
+                                <li>Quick information lookup</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Customer Support -->
+                <div class="carousel-item">
+                    <div class="agent-card">
+                        <img src="images/headset-solid.svg" alt="Customer Support" class="agent-image">
+                        <h3 class="agent-name">Sam</h3>
+                        <p class="agent-role">Customer Support Agent</p>
+                        <p class="agent-description">
+                            Try saying: <em>"My order hasn't arrived"</em> or <em>"The product isn't working"</em>.
+                        </p>
+                        <div class="agent-features">
+                            <h4>Capabilities:</h4>
+                            <ul>
+                                <li>Issue troubleshooting</li>
+                                <li>FAQ responses</li>
+                                <li>Ticket creation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Real Estate -->
+                <div class="carousel-item">
+                    <div class="agent-card">
+                        <img src="images/house-solid.svg" alt="Real Estate Agent" class="agent-image">
+                        <h3 class="agent-name">Taylor</h3>
+                        <p class="agent-role">Real Estate Consultant</p>
+                        <p class="agent-description">
+                            Try saying: <em>"Tell me about beach properties"</em> or <em>"I'd like to view the Hillside home"</em>.
+                        </p>
+                        <div class="agent-features">
+                            <h4>Current Listings:</h4>
+                            <ul>
+                                <li>3br Beach House - $1.25M</li>
+                                <li>4br Family Home - $895K</li>
+                                <li>2br CBD Apartment - $650K</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Takeaway -->
+                <div class="carousel-item">
+                    <div class="agent-card">
+                        <img src="images/utensils-solid.svg" alt="Takeaway Assistant" class="agent-image">
+                        <h3 class="agent-name">Jordan</h3>
+                        <p class="agent-role">Burger Shop Assistant</p>
+                        <p class="agent-description">
+                            Try saying: <em>"I'd like a Classic Beef burger"</em> or <em>"What sides do you have?"</em>.
+                        </p>
+                        <div class="agent-features">
+                            <h4>Menu:</h4>
+                            <ul>
+                                <li><strong>Burgers:</strong> Classic ($12.50), Chicken ($11), Veggie ($10.50)</li>
+                                <li><strong>Sides:</strong> Fries ($4.50), Onion Rings ($5)</li>
+                                <li><strong>Drinks:</strong> Soft Drink ($3.50), Juice ($4)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dentist -->
+                <div class="carousel-item">
+                    <div class="agent-card">
+                        <img src="images/tooth-solid.svg" alt="Dental Receptionist" class="agent-image">
+                        <h3 class="agent-name">Casey</h3>
+                        <p class="agent-role">Dental Receptionist</p>
+                        <p class="agent-description">
+                            Try saying: <em>"I need a checkup appointment"</em> or <em>"Do you do emergency visits?"</em>.
+                        </p>
+                        <div class="agent-features">
+                            <h4>Clinic Info:</h4>
+                            <ul>
+                                <li>Mon-Fri 8am-6pm, Sat 9am-1pm</li>
+                                <li>Checkups, Cleaning, Emergency</li>
+                                <li>123 Healthy Street</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-arrow left">&#10094;</button>
+            <button class="carousel-arrow right">&#10095;</button>
+            
+            <div class="carousel-nav">
+                <div class="carousel-dot active"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 JZAP. All rights reserved.</p>
+    </footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.carousel');
+        const items = document.querySelectorAll('.carousel-item');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const arrowLeft = document.querySelector('.carousel-arrow.left');
+        const arrowRight = document.querySelector('.carousel-arrow.right');
+        const agentCards = document.querySelectorAll('.agent-card');
+        let currentIndex = 0;
+        let autoScrollInterval;
+        let isHovering = false;
+        const totalItems = items.length;
+        const scrollSpeed = 5000; // 8 seconds per slide
+
+        // // Debug elements
+        // const debugOverlay = document.createElement('div');
+        // debugOverlay.style.position = 'fixed';
+        // debugOverlay.style.bottom = '20px';
+        // debugOverlay.style.left = '20px';
+        // debugOverlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
+        // debugOverlay.style.color = 'white';
+        // debugOverlay.style.padding = '10px';
+        // debugOverlay.style.borderRadius = '5px';
+        // debugOverlay.style.zIndex = '1000';
+        // debugOverlay.style.fontFamily = 'monospace';
+        // debugOverlay.innerHTML = `
+        //     <div>Last Action: <span id="debug-action">None</span></div>
+        //     <div>Current Index: <span id="debug-index">0</span></div>
+        //     <div>Hover State: <span id="debug-hover">false</span></div>
+        // `;
+        // document.body.appendChild(debugOverlay);
+
+        // // Update debug display
+        // function updateDebug(action) {
+        //     document.getElementById('debug-action').textContent = action;
+        //     document.getElementById('debug-index').textContent = currentIndex;
+        //     document.getElementById('debug-hover').textContent = isHovering;
+            
+        //     // Flash the clicked button
+        //     if (action.includes('Arrow')) {
+        //         const btn = action.includes('Left') ? arrowLeft : arrowRight;
+        //         btn.style.backgroundColor = 'red';
+        //         setTimeout(() => {
+        //             btn.style.backgroundColor = '';
+        //         }, 300);
+        //     }
+        // }
+
+
+        // Initialize carousel
+        function initCarousel() {
+            updateCarousel();
+            startAutoScroll();
+            setupEventListeners();
+            // updateDebug('Initialized');
+        }
+
+        // Update carousel position and dots
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+
+            // // Visual indicator of current slide
+            // items.forEach((item, index) => {
+            //     item.style.border = index === currentIndex ? '3px solid lime' : 'none';
+            // });
+        }
+
+        // Move to next slide
+        function nextSlide() {
+            carousel.style.transition = 'transform 0.5s ease-in-out'; // Force transition
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+            // updateDebug('Next slide');
+        }
+
+        // Move to previous slide
+        function prevSlide() {
+            carousel.style.transition = 'transform 0.5s ease-in-out'; // Force transition
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+            // updateDebug('Prev slide');
+        }
+
+        // Start auto-scrolling
+        function startAutoScroll() {
+            stopAutoScroll();
+            autoScrollInterval = setInterval(() => {
+                nextSlide();
+                // updateDebug('Auto-advance');
+            }, scrollSpeed);
+        }
+
+        // Stop auto-scrolling
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // Reset timer when manually navigating
+        function resetTimer() {
+            stopAutoScroll();
+            startAutoScroll();
+        }
+
+        // Set up all event listeners
+        function setupEventListeners() {
+            // Arrow controls with visual feedback
+            arrowRight.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // updateDebug('Right Arrow clicked');
+                nextSlide();
+                resetTimer();
+            });
+
+            arrowLeft.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // updateDebug('Left Arrow clicked');
+                prevSlide();
+                resetTimer();
+            });
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetTimer();
+                });
+            });
+
+            // Hover effects on each agent card
+            agentCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    isHovering = true;
+                    card.classList.add('hovering');
+                    stopAutoScroll();
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    isHovering = false;
+                    card.classList.remove('hovering');
+                    startAutoScroll();
+                });
+            });
+
+            // Touch events for mobile
+            let touchStartX = 0;
+            
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                stopAutoScroll();
+                carouselContainer.classList.add('hovering');
+            }, {passive: true});
+
+            carousel.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                
+                if (diff > 50) {
+                    nextSlide(); // Swipe left
+                } else if (diff < -50) {
+                    prevSlide(); // Swipe right
+                }
+                carouselContainer.classList.remove('hovering');
+                resetTimer();
+            }, {passive: true});
+        }
+
+        // Start the carousel
+        initCarousel();
+    });
+</script>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
     <meta name="description" content="JZAP — Voice AI solutions for New Zealand businesses.">
     <meta name="keywords" content="voice AI NZ, JZAP, New Zealand AI, voice automation, AI assistants NZ">
     <meta name="author" content="Jack Zarifeh">
@@ -18,431 +19,12 @@
     <meta property="og:type" content="website">
     
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="js/navbar.js" defer></script>
 
-    <style>
-        /* Ensure the page fills the whole viewport */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding-top: 60px; /* Space at the top to prevent content from being hidden behind the header */
-        }
-
-        /* Wrapper to handle content */
-        .wrapper {
-            min-height: 100vh; /* Make the wrapper fill the whole viewport */
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Main content should grow as needed */
-        .main-content {
-            flex: 1; /* This makes the main content grow to take up space between header and footer */
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 15px 20px;
-            background-color: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            width: 100%;
-            display: flex;
-            justify-content: center; /* Center the content container */
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            max-width: 1000px;
-            gap: 15px;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: black;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 70%;
-        }
-
-        .contact-btn {
-            padding: 8px 16px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            white-space: nowrap;
-            order: 3; 
-        }
-
-        /* Hero Section Styles */
-        .hero-section {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            box-sizing: border-box;
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-size: 36px;
-            font-weight: bold;
-            color: black;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .highlighted-name {
-            display: inline-block;
-            background-color: black;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 36px;
-        }
-
-        .hero-content h2 {
-            font-size: 18px;
-            color: gray;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            max-width: 600px;
-        }
-
-        .cta-btn {
-            padding: 10px 20px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .cta-btn:hover {
-            background-color: #007b7a;
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Style the circular placeholder for the hero image */
-        .circular-placeholder {
-            width: 300px;
-            height: 300px;
-            background-color: lightgray;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            border: 5px solid black;
-        }
-
-        .circular-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        /* About Section Styles */
-        .about-section {
-            background-color: #fff;
-            padding: 50px 30px;
-            max-width: 1000px;
-            margin: 40px auto;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-section h2 {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
-            text-align: center;
-        }
-
-        .about-section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #f1f1f1;
-            color: #333;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 14px;
-            width: 100%;
-            bottom: 0;
-            flex-shrink: 0;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 90%;
-            width: 550px;
-            height: auto;
-            max-height: 90vh;
-            overflow: auto;
-        }
-
-        .modal-content iframe {
-            border: none;
-            width: 100%;
-            height: 80vh;
-        }
-
-        .close-btn {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 5px 10px;
-            background-color: #f00;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .phone-icon {
-            display: none;
-            margin-right: 10px;
-            text-decoration: none;
-            z-index: 1; /* Ensure it stays above other elements */
-        }
-
-        .contact-btn {
-            padding: 8px 16px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            white-space: nowrap;
-            position: relative; /* Ensure button stays clickable */
-            z-index: 2; /* Higher than phone icon */
-        }
-
-        .contact-number {
-            margin-left: auto; /* This pushes it to the right */
-            padding-right: 15px;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .contact-number a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-weight: bold; /* Make number bold */
-            font-size: 15px; /* Slightly larger than the default 14px */
-        }
-
-        .contact-number a:hover {
-            color: #007b7a;
-            text-decoration: underline; /* Underline on hover only */
-        }
-       
-        @media (max-width: 768px) {
-            .phone-icon {
-                display: block;
-                margin-left: auto; /* Push to right */
-                margin-right: 10px;
-                font-size: 18px;
-            }
-            .contact-number {
-                display: none;
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 900px) {
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-            
-            .hero-content {
-                order: 1;
-                margin-bottom: 30px;
-            }
-            
-            .hero-image {
-                order: 2;
-            }
-            
-            .hero-content h1,
-            .hero-content h2 {
-                max-width: 100%;
-            }
-            
-            .highlighted-name {
-                font-size: 28px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 28px;
-            }
-            
-            .highlighted-name {
-                font-size: 28px;
-            }
-
-            .hero-content h2 {
-                font-size: 16px;
-            }
-
-            .cta-btn {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-
-            .about-section {
-                padding: 30px 20px;
-                margin: 20px auto;
-            }
-
-            .about-section h2 {
-                font-size: 24px;
-            }
-
-            .about-section p {
-                font-size: 16px;
-            }
-            
-            .circular-placeholder {
-                width: 250px;
-                height: 250px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 10px 15px;
-            }
-            
-            .logo {
-                font-size: 18px;
-                max-width: 60%;
-            }
-            
-            .contact-btn {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-
-            .hero-content h1 {
-                font-size: 24px;
-                line-height: 1.3;
-            }
-            
-            .highlighted-name {
-                font-size: 24px;
-                padding: 3px 8px;
-            }
-
-            .hero-content h2 {
-                font-size: 14px;
-            }
-
-            .cta-btn {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-            
-            .circular-placeholder {
-                width: 200px;
-                height: 200px;
-                border-width: 3px;
-            }
-            
-            .about-section {
-                padding: 20px 15px;
-                margin: 15px auto;
-                border-radius: 10px;
-            }
-            
-            .about-section h2 {
-                font-size: 20px;
-                margin-bottom: 15px;
-            }
-            
-            .about-section p {
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        }
-    </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <header>
-        <div class="header-content">
-            <div class="logo">JZAP</div>
-            <div class="contact-number">
-                <a href="tel:0220805712">022 080 5712</a>
-            </div>
-            <button class="contact-btn" onclick="openModal()">Get in touch</button>
-            <a href="tel:0220805712" class="phone-icon">📞</a>
-        </div>
-    </header>
 
     <!-- Main Section -->
     <div class="main-content">
@@ -461,18 +43,25 @@
             
             <div class="hero-image">
                 <div class="circular-placeholder">
-                    <img src="headshot.jpg" alt="Headshot">
+                    <img src="images/headshot.jpg" alt="Headshot">
                 </div>
             </div>
         </div>
         
         <!-- About Me Section -->
-        <div class="about-section">
+        <div class="content-section about-section">
             <h2>A bit about me</h2>
             <p>
                 I'm Jack Zarifeh, from Christchurch, New Zealand, with a background in mechatronics engineering (BE(hons)). My journey into AI began in an unusual place — developing facial recognition for sheep at an agritech startup! This gave me hands-on experience with AI's potential and sharpened my skills in machine learning, computer vision, and data analysis.<br><br>
                 Seeing how AI can transform businesses, I shifted my focus to automation, particularly voice AI. Today, I'm passionate about creating solutions that simplify complex processes, enhance customer interactions, and ultimately drive success.
             </p>
+        </div>
+
+        <!-- New Logo Section -->
+        <div class="logo-section">
+            <div class="logo-container">
+                <img src="images/JZAPcj.png" alt="JZAP Full Logo" class="full-logo">
+            </div>
         </div>
     </div>
 
@@ -480,14 +69,6 @@
     <footer>
         <p>&copy; 2024 JZAP. All rights reserved.</p>
     </footer>
-</div>
-
-<!-- Modal for Airtable Form -->
-<div class="modal" id="contactModal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeModal()">Close</button>
-        <iframe class="airtable-embed" src="https://airtable.com/embed/apps9gdCE3JCSYnX0/paga9xw6oFqu83qOg/form" frameborder="0" onmousewheel="" width="100%" height="670" style="background: transparent; border: 1px solid #ccc; display: none;"></iframe>
-    </div>
 </div>
 
 <div class="modal" id="getStartedModal">
@@ -498,17 +79,6 @@
 </div>
 
 <script>
-    function openModal() {
-        document.getElementById('contactModal').style.display = 'flex';
-        const iframe = document.querySelector('#contactModal iframe');
-        iframe.style.display = 'block';
-    }
-
-    function closeModal() {
-        document.getElementById('contactModal').style.display = 'none';
-        const iframe = document.querySelector('#contactModal iframe');
-        iframe.style.display = 'none';
-    }
 
     function openGetStartedModal() {
         document.getElementById('getStartedModal').style.display = 'flex';
