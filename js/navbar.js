@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <header>
         <div class="header-content">
             <a href="/" class="logo">
-                <img src="https://jackzed.github.io/images/JZAP_cj_noWriting.png" alt="JZAP Logo" class="logo-img">
+                <img src="/images/JZAP_cj_noWriting.png" alt="JZAP Logo" class="logo-img">
             </a>
             <nav class="main-nav">
                 <a href="/demo" class="nav-link demo-link">Demo</a>
