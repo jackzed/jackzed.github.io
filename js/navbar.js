@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
     <header>
         <div class="header-content">
             <a href="/" class="logo">
-                <img src="images/JZAP_cj_noWriting.png" alt="JZAP Logo" class="logo-img">
+                <img src="/images/JZAP_cj_noWriting.png" alt="JZAP Logo" class="logo-img">
             </a>
             <nav class="main-nav">
-                <a href="demo.html" class="nav-link demo-link">Demo</a>
+                <a href="/demo" class="nav-link demo-link">Demo</a>
                 <span class="nav-divider">|</span>
                 <div class="contact-number">
                     <a href="tel:0220805712">Jack: 022 080 5712</a>
